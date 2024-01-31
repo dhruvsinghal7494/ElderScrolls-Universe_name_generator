@@ -17,7 +17,7 @@ def generate_character_names():
     gender = st.selectbox("Select Gender", ["male", "female"])
     category = st.selectbox("Select Race/Category", ["Altmer", "Argonian", "Bosmer", "Breton", "Dunmer", "Imperial",
        "Khajit", "Nord", "Orc", "Redguard"])
-    start_letter = st.text_input("Starting Letter (Optional)")
+    start_letter = st.text_input("Starting Letter")
     quantity = st.slider("Number of Names", 1, 100, 10)
 
     if st.button("Generate Names"):
@@ -32,7 +32,7 @@ def recommend_character_names():
     gender = st.selectbox("Select Gender", ["male", "female"])
     category = st.selectbox("Select Race/Category", ["Altmer", "Argonian", "Bosmer", "Breton", "Dunmer", "Imperial",
        "Khajit", "Nord", "Orc", "Redguard"])
-    start_letter = st.text_input("Starting Letter (Optional)")
+    start_letter = st.text_input("Starting Letter")
     quantity = st.slider("Number of Names", 1, 100, 10)
     similarity_threshold = st.slider("Similarity Threshold", 1, 100, 10)
     similar_to = st.text_input("Similar To (Optional)")

@@ -16,7 +16,7 @@ def generate_character_names():
     st.subheader("Character Name Generation")
     gender = st.selectbox("Select Gender", ["male", "female"])
     category = st.selectbox("Select Race/Category", ["Argonian", "Nord", "Khajiit", "Other"])
-    start_letter = st.text_input("Starting Letter (Optional)")
+    start_letter = st.text_input("Starting Letter")
     quantity = st.slider("Number of Names", 1, 100, 10)
 
     if st.button("Generate Names"):

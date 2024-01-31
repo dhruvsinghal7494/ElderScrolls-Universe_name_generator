@@ -15,8 +15,9 @@ st.title(" Elder Scrolls Universe Characters Names Generator and Recommender")
 def generate_character_names():
     st.subheader("Character Name Generation")
     gender = st.selectbox("Select Gender", ["male", "female"])
-    category = st.selectbox("Select Race/Category", ["Argonian", "Nord", "Khajiit", "Other"])
-    start_letter = st.text_input("Starting Letter")
+    category = st.selectbox("Select Race/Category", ["Altmer", "Argonian", "Bosmer", "Breton", "Dunmer", "Imperial",
+       "Khajit", "Nord", "Orc", "Redguard"])
+    start_letter = st.text_input("Starting Letter (Optional)")
     quantity = st.slider("Number of Names", 1, 100, 10)
 
     if st.button("Generate Names"):
@@ -29,7 +30,8 @@ def generate_character_names():
 def recommend_character_names():
     st.subheader("Character Name Recommendation")
     gender = st.selectbox("Select Gender", ["male", "female"])
-    category = st.selectbox("Select Race/Category", ["Argonian", "Nord", "Khajiit", "Other"])
+    category = st.selectbox("Select Race/Category", ["Altmer", "Argonian", "Bosmer", "Breton", "Dunmer", "Imperial",
+       "Khajit", "Nord", "Orc", "Redguard"])
     start_letter = st.text_input("Starting Letter (Optional)")
     quantity = st.slider("Number of Names", 1, 100, 10)
     similarity_threshold = st.slider("Similarity Threshold", 1, 100, 10)
@@ -40,7 +42,7 @@ def recommend_character_names():
         st.success(f"Recommended Names: {', '.join(recommended_names)}")
 
 # Sidebar Navigation
-menu_option = st.selectbox("Select Option", ["Recommend Names", "Generate Names"])
+menu_option = st.selectbox("Select Option", ["Generate Names", "Recommend Names"])
 
 # Main Content
 if menu_option == "Generate Names":
@@ -48,13 +50,3 @@ if menu_option == "Generate Names":
 elif menu_option == "Recommend Names":
     recommend_character_names()
 
-# # Main Content
-# if menu_option == "Generate Names":
-#     col1, col2 = st.columns(2)  # Divide the main content into two columns
-#     with col1:
-#         generate_character_names()
-
-# elif menu_option == "Recommend Names":
-#     col1, col2 = st.columns(2)  # Divide the main content into two columns
-#     with col1:
-#         recommend_character_names()

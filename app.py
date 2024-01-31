@@ -40,7 +40,7 @@ def recommend_character_names():
         st.success(f"Recommended Names: {', '.join(recommended_names)}")
 
 # Sidebar Navigation
-menu_option = st.selectbox("Select Option", ["Generate Names", "Recommend Names"])
+menu_option = st.selectbox("Select Option", ["Recommend Names", "Generate Names"])
 
 # Main Content
 if menu_option == "Generate Names":
